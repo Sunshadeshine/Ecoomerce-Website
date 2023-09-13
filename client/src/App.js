@@ -9,19 +9,21 @@ import React from "react";
 import "./App.css";
 import PageNotFound from "./pages/PageNotFound";
 import Login_Register from "./pages/Auth/Login_Register";
-// import Profile from "./pages/User/profile";
-// import Orders from "./pages/User/orders";
-// import Wallet from "./pages/User/Wallet";
+
 import PrivateRoute from "./components/Routes/Private";
 import Dashboard from "./pages/User/Dashboard";
+import Forgot_Password from "./pages/Auth/Forgot_Password";
+import Admin_Dashboard from "./pages/Admin/admin_Dashboard";
+import AdminRoute from "./components/Routes/AdminRoute";
 function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/dashboard" element={<PrivateRoute />}>
-        <Route path="" element={<Dashboard />} />
-        {/* <Route path="orders" element={<Orders />} /> */}
-        {/* <Route path="wallet" element={<Wallet />} /> */}
+        <Route path="user" element={<Dashboard />} />
+      </Route>
+      <Route path="/dashboard" element={<AdminRoute />}>
+        <Route path="admin" element={<Admin_Dashboard />} />
       </Route>
       <Route path="/about" element={<About />} />
       <Route path="/contactus" element={<Contact />} />
@@ -31,6 +33,7 @@ function App() {
       <Route path="/pgnf" element={<PageNotFound />} />
       <Route path="/Register" element={<Login_Register />} />
       <Route path="/login" element={<Login_Register />} />
+      <Route path="/forgot-password" element={<Forgot_Password />} />
     </Routes>
   );
 }

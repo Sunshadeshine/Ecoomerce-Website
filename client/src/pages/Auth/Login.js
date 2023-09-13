@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import { useAuth } from "../../context/auth";
 import { toast } from "react-toastify";
 import axios from "axios";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 
 function Login() {
   const [auth, setAuth] = useAuth();
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -25,20 +26,21 @@ function Login() {
           token: res.data.token,
         });
         localStorage.setItem("auth", JSON.stringify(res.data));
-        navigate("/");
+        navigate(location.state || "/");
         setTimeout(() => {
           toast.success(res.data.message);
         }, 1);
       } else {
+        console.log(res.data.message);
         toast.error(res.data.message);
       }
     } catch (error) {
-      console.log("Error in Creating in account", error);
-      toast.error("Something went wrong");
+      console.log("Error in Login in", error);
+      toast.error("Something went wrong! Try Again ");
     }
   };
   return (
-    <div className="Sign_in">
+    <div className=" common_form Sign_in">
       <h3>Already have an account?</h3>
 
       <form onSubmit={handleSubmit}>
@@ -69,7 +71,9 @@ function Login() {
               setPassword(e.target.value);
             }}
           />
-          <NavLink to="/auth/forgot"> Forgot Password ?</NavLink>
+          <NavLink to="/forgot-password" className="h6 small">
+            Forgot Password ?
+          </NavLink>
         </div>
         <button type="submit" className="signin_but">
           Sign In

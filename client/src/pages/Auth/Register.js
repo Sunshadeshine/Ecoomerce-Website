@@ -9,6 +9,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [address, setAddress] = useState("");
   const [email, setEmail] = useState("");
+  const [answer, setAnswer] = useState("");
   const navigate = useNavigate();
   //form function
   const handleSubmit = async (e) => {
@@ -17,7 +18,7 @@ const Register = () => {
     try {
       const res = await axios.post(
         `${process.env.REACT_APP_API}/api/v1/auth/register`,
-        { name, email, password, phone, address }
+        { name, email, password, phone, address, answer }
       );
       if (res && res.data.success) {
         navigate("/login");
@@ -31,7 +32,7 @@ const Register = () => {
     }
   };
   return (
-    <div className="Register">
+    <div className="common_form Register">
       <h3>New User?</h3>
 
       <form onSubmit={handleSubmit}>
@@ -108,6 +109,23 @@ const Register = () => {
             className="form-control"
             id="password"
             name="password"
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="answer">
+            <h6>Security Question:</h6>What was the brand of your first
+            computer?
+          </label>
+          <input
+            onChange={(e) => {
+              setAnswer(e.target.value);
+            }}
+            value={answer}
+            type="text"
+            className="form-control"
+            id="answer"
+            name="answer"
             required
           />
         </div>

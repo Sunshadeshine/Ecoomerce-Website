@@ -1,97 +1,96 @@
-Page not found
-.page_404{ padding:40px 0; background:#fff; font-family: 'Arvo', serif;
+Page not found .page_404 {
+  padding: 40px 0;
+  background: #fff;
+  font-family: "Arvo", serif;
 }
 
-.page_404  img{ width:100%;}
+.page_404 img {
+  width: 100%;
+}
 
-.four_zero_four_bg{
- 
- background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
-    height: 400px;
-    background-position: center;
- }
- 
- 
- .four_zero_four_bg h1{
- font-size:80px;
- }
- 
-  .four_zero_four_bg h3{
-       font-size:80px;
-       }
-       
-       .link_404{      
-  color: #fff!important;
-    padding: 10px 20px;
-    background: #39ac31;
-    margin: 20px 0;
-    display: inline-block;
-    }
-  .contant_box_404{
-     margin-top:-50px;
-     }
+.four_zero_four_bg {
+  background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+  height: 400px;
+  background-position: center;
+}
 
-  .main_login_reg {
-     display: flex;
-     flex-direction:row;
-    /* row-gap: 20px; */
-    justify-content: space-between;
-     width:85%;
-    margin: 100px auto ;
-  }
-  .signin_but{
-    width:100%;
-    background-color: aliceblue;
-    margin:20px 0px;
-    height:40px;
-    border:0.5px solid rgb(190, 187, 187);
-    font-weight: 600;
+.four_zero_four_bg h1 {
+  font-size: 80px;
+}
 
-  }
-    .signin_but:hover{
-      color:black;
-    }
-    .Sign_in form ,.Sign_in p,.Register form{
-     text-align: left;
-    }
-    .Sign_in h3 ,.Register h3{
-      font-size: 2.4rem;
-    }
-    .Sign_in{
-      font-family: 'Montserrat', sans-serif;
-      width:30%;
-    }
-    .Register{
-       font-family: 'Montserrat', sans-serif;
-      width:30%;
-    }
-   .Sign_in .form-group, .Register .form-group{
-    margin:10px 0px;
-   }
-   .form-group label{
-    font-size: 0.8rem;
-   }
+.four_zero_four_bg h3 {
+  font-size: 80px;
+}
+.frgt-pss {
+  margin: auto;
+}
+.link_404 {
+  color: #fff !important;
+  padding: 10px 20px;
+  background: #39ac31;
+  margin: 20px 0;
+  display: inline-block;
+}
+.contant_box_404 {
+  margin-top: -50px;
+}
 
+.main_login_reg {
+  display: flex;
+  flex-direction: row;
+  /* row-gap: 20px; */
+  justify-content: space-between;
+  width: 85%;
+  margin: 100px auto;
+}
+.signin_but {
+  width: 100%;
+  background-color: aliceblue;
+  margin: 20px 0px;
+  height: 40px;
+  border: 0.5px solid rgb(190, 187, 187);
+  font-weight: 600;
+}
+.signin_but:hover {
+  color: black;
+}
+.common_form form {
+  text-align: left;
+}
+.common_form h3 {
+  font-size: 2.4rem;
+}
+.common_form {
+  font-family: "Montserrat", sans-serif;
+  width: 30%;
+}
 
+.common_form .form-group {
+  margin: 10px 0px;
+}
+.form-group label {
+  font-size: 0.8rem;
+}
 
 /* social login */
-.socials
-{ 
- margin-top: 20px;
+.socials {
+  margin-top: 20px;
   column-gap: 10px;
   justify-content: center;
 }
-.social-label{
-   font-family: 'Montserrat', sans-serif;
-  font-size:1.5rem ;
- 
+.social-label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
 }
 
 .zmdi-facebook {
-  background: #3b5998; }
+  background: #3b5998;
+}
 
 .zmdi-twitter {
-  background: #1da0f2; }
+  background: #1da0f2;
+}
 
 .zmdi-google {
-  background: #e72734; }
+  background: #e72734;
+}

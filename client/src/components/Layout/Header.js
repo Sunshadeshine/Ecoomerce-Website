@@ -20,19 +20,6 @@ const Header = () => {
       toast.success("User Logout Sucessfully !");
     }, 1);
   };
-  // const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
-  //   <a
-  //     href=""
-  //     ref={ref}
-  //     onClick={(e) => {
-  //       e.preventDefault();
-  //       onClick(e);
-  //     }}
-  //   >
-  //     {children}
-  //     &#x25bc;
-  //   </a>
-  // ));
 
   const [showDropdown, setShowDropdown] = useState(false);
 
@@ -50,47 +37,86 @@ const Header = () => {
               </button>
             </form>
           </div>
-          <div className="d-flex justify-content-between icons_container">
-            <span className="material-symbols-outlined">location_on</span>
-            <span className="material-symbols-outlined">favorite</span>
+          <div className="d-flex align-items-center justify-content-between icons_container">
+            <NavLink
+              className="icon-label-font d-flex flex-column align-items-center"
+              to="/location"
+            >
+              <span className="material-symbols-outlined">location_on</span>
+              <span>location</span>
+            </NavLink>
+            <NavLink
+              className="icon-label-font d-flex flex-column align-items-center"
+              to="/wishlist"
+            >
+              <span className="material-symbols-outlined">favorite</span>
+              <span>wishlists</span>
+            </NavLink>
+
             {/* Login /logout */}
-            {!auth.user ? (
-              <NavLink to="/Register">
-                <span className="material-symbols-outlined">person</span>
-              </NavLink>
-            ) : (
-              <Dropdown
-                onMouseLeave={() => setShowDropdown(false)}
-                onMouseOver={() => setShowDropdown(true)}
-              >
-                <Dropdown.Toggle variant="none">
-                  <NavLink to="/dashboard">
-                    <span className="material-symbols-outlined">person</span>{" "}
+            <Dropdown
+              onMouseLeave={() => setShowDropdown(false)}
+              onMouseOver={() => setShowDropdown(true)}
+            >
+              <Dropdown.Toggle variant="none">
+                {!auth.user ? (
+                  <NavLink
+                    className="icon-label-font d-flex flex-column align-items-center"
+                    to="/Register"
+                  >
+                    <span className="material-symbols-outlined">person</span>
+                    <span>Profile</span>
                   </NavLink>
-                </Dropdown.Toggle>
+                ) : (
+                  <NavLink
+                    className=" icon-label-font d-flex flex-column align-items-center"
+                    to={`/dashboard/${
+                      auth?.user?.role === 1 ? "admin" : "user"
+                    }`}
+                  >
+                    <span className="material-symbols-outlined">person</span>
+                    <span>Profile</span>
+                  </NavLink>
+                )}
+              </Dropdown.Toggle>
 
-                <Dropdown.Menu show={showDropdown}>
+              <Dropdown.Menu show={showDropdown}>
+                <Dropdown.Item>
+                  <NavLink to="/profile">Profile</NavLink>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <NavLink to="/wallet">Wallet</NavLink>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <NavLink to="/orders">Orders</NavLink>
+                </Dropdown.Item>
+                <Dropdown.Divider />
+                {!auth.user ? (
                   <Dropdown.Item>
-                    <NavLink to="/profile">Profile</NavLink>
+                    <NavLink to="/login">Log In</NavLink>
                   </Dropdown.Item>
-                  <Dropdown.Item>
-                    <NavLink to="/wallet">Wallet</NavLink>
-                  </Dropdown.Item>
-                  <Dropdown.Item>
-                    <NavLink to="/orders">Orders</NavLink>
-                  </Dropdown.Item>
-                  <Dropdown.Divider />
+                ) : (
                   <Dropdown.Item onClick={handleLogout}>Log Out</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-            )}
+                )}
+              </Dropdown.Menu>
+            </Dropdown>
 
-            <NavLink to="/cart" style={{ position: "relative" }}>
+            <NavLink
+              className="icon-label-font d-flex flex-column align-items-center"
+              to="/cart "
+              style={{ position: "relative" }}
+            >
               <span className="CartLengthBox">
                 {" "}
                 <span className="CartLength">6</span>
               </span>
-              <span className="material-symbols-outlined">shopping_cart</span>
+              <NavLink
+                className="icon-label-font d-flex flex-column align-items-center"
+                to="/cart"
+              >
+                <span className="material-symbols-outlined">shopping_cart</span>
+                <span>Cart</span>
+              </NavLink>
             </NavLink>
           </div>
         </div>
