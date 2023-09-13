@@ -126,6 +126,7 @@ export const signIn = async (req, res) => {
         name: user.name,
         address: user.address,
         email: user.email,
+        phone: user.phone,
         password: user.password,
         role: user.role,
       },

@@ -1,26 +1,24 @@
 import React from "react";
-import UserMenu from "../../components/Layout/UserMenu";
+import AdminMenu from "../../components/Layout/AdminMenu";
 import Layout from "../../components/Layout/Layout";
 import { useAuth } from "../../context/auth";
 import "../Index.css";
 import DashboardHeader from "../../components/Layout/DashboardHeader";
 
-const Wallet = () => {
+const CreateProduct = () => {
   return (
     <Layout>
       <div className="admin-dashboard">
         <DashboardHeader />
         <div className="m-3 p-3 row">
           <div className="col-md-3">
-            <UserMenu />
+            <AdminMenu />
           </div>
-          <div className="col-md-9 admin-details">
-            <h3 className=" ">Wallet</h3>
-          </div>
+          <div className="col-md-9 admin-details">Create Products</div>
         </div>
       </div>
     </Layout>
   );
 };
 
-export default Wallet;
+export default CreateProduct;

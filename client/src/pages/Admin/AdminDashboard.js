@@ -1,10 +1,11 @@
 import React from "react";
-import UserMenu from "../../components/Layout/UserMenu";
+import AdminMenu from "../../components/Layout/AdminMenu";
 import Layout from "../../components/Layout/Layout";
 import { useAuth } from "../../context/auth";
 import "../Index.css";
 import DashboardHeader from "../../components/Layout/DashboardHeader";
-const Dashboard = () => {
+
+const AdminDashboard = () => {
   const [auth] = useAuth();
   return (
     <Layout>
@@ -12,30 +13,28 @@ const Dashboard = () => {
         <DashboardHeader />
         <div className="m-3 p-3 row">
           <div className="col-md-3">
-            <UserMenu />
+            <AdminMenu />
           </div>
+
           <div className="col-md-9 admin-details">
-            <h3 className=" ">User Details</h3>
+            <h3 className=" ">Admin Details</h3>
             <div className="card ">
-              <span class=" position-relative  material-symbols-outlined">
-                edit_note
-              </span>
               <table>
                 <tr>
-                  <td>Name:</td>
+                  <td>Role :</td>
+                  <td>Admin</td>
+                </tr>
+                <tr>
+                  <td>Name :</td>
                   <td>{auth?.user?.name}</td>
                 </tr>
                 <tr>
-                  <td>Email:</td>
+                  <td>Email :</td>
                   <td>{auth?.user?.email}</td>
                 </tr>
                 <tr>
-                  <td>Contact:</td>
+                  <td>Contact :</td>
                   <td>{auth?.user?.phone}</td>
-                </tr>
-                <tr className="align-top">
-                  <td>Address:</td>
-                  <td>{auth?.user?.address}</td>
                 </tr>
               </table>
             </div>
@@ -46,4 +45,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default AdminDashboard;

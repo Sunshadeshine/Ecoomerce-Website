@@ -5,7 +5,7 @@ import { useAuth } from "../../context/auth";
 import "../Index.css";
 import DashboardHeader from "../../components/Layout/DashboardHeader";
 
-const Wallet = () => {
+const Security = () => {
   return (
     <Layout>
       <div className="admin-dashboard">
@@ -15,7 +15,7 @@ const Wallet = () => {
             <UserMenu />
           </div>
           <div className="col-md-9 admin-details">
-            <h3 className=" ">Wallet</h3>
+            <h3 className=" ">Security</h3>
           </div>
         </div>
       </div>
@@ -23,4 +23,4 @@ const Wallet = () => {
   );
 };
 
-export default Wallet;
+export default Security;

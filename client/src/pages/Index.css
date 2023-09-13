@@ -94,3 +94,33 @@ Page not found .page_404 {
 .zmdi-google {
   background: #e72734;
 }
+/* }admin dashboard */
+.admin-dashboard {
+  width: 85%;
+  margin: 70px auto;
+  font-family: "Montserrat", sans-serif;
+}
+
+.admin-details .card {
+  padding: 50px;
+  width: 50%;
+  margin: auto;
+  box-sizing: content-box;
+  font-size: 1.3rem;
+}
+hr {
+  border-color: black;
+}
+.card table,
+.card th,
+.card td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+.card td {
+  border-bottom: 1px solid rgb(212, 208, 208);
+}
+.card table {
+  border-collapse: separate;
+  border-spacing: 0 15px;
+}
