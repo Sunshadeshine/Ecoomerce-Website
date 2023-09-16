@@ -8,7 +8,7 @@ import {fileURLToPath} from 'url';
 const __filename = fileURLToPath(import.meta.url); 
 const __dirname=path.dirname(__filename);
 console.log("router loaded");
-import {fileURLToPath} from 'url';
+
 
 const router = express.Router();
 router.use("*", function (req, res) {
