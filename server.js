@@ -6,6 +6,7 @@ import cors from "cors";
 import connectDB from "./config/db.js";
 import { default as routes } from "./routes/index.js";
 import path from "path";
+import {fileURLToPath} from 'url';
 const app = express();
 //confgure env
 dotenv.config();
