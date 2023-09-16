@@ -23,6 +23,8 @@ connectDB();
 //body-parser is inherited in express now
 //middleware
 const __filename = fileURLToPath(import.meta.url);
+const __dirname=path.dirname(__filename);
+
 app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
