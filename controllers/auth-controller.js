@@ -56,7 +56,7 @@ export const signUp = async (req, res) => {
       });
     }
     //   checking existing user
-    const existingUser = await userModel.findOne({ email });
+    const existingUser = await userModel.findOne({ email }).maxTimeMS(20000);
     if (existingUser) {
       res.status(200).send({
         success: false,
@@ -97,7 +97,7 @@ export const signIn = async (req, res) => {
         message: "Invalid Email/Password",
       });
     }
-    const user = await userModel.findOne({ email });
+    const user = await userModel.findOne({ email }).maxTimeMS(20000);
     if (!user) {
       return res.status(404).send({
         success: false,
@@ -160,7 +160,7 @@ export const forgotPsswrd = async (req, res) => {
       });
     }
     //check email and answer for creating new password
-    const user = await userModel.findOne({ email, answer });
+    const user = await userModel.findOne({ email, answer }).maxTimeMS(20000);
     if (!user) {
       res.status(404).send({
         success: false,

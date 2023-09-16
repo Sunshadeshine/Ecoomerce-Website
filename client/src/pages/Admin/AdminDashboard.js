@@ -18,7 +18,7 @@ const AdminDashboard = () => {
 
           <div className="col-md-9 admin-details">
             <h3 className=" ">Admin Details</h3>
-            <div className="card ">
+            <div className="admin-card  card ">
               <table>
                 <tr>
                   <td>Role :</td>

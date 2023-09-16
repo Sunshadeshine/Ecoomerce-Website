@@ -94,14 +94,14 @@ Page not found .page_404 {
 .zmdi-google {
   background: #e72734;
 }
-/* }admin dashboard */
+/* admin dashboard */
 .admin-dashboard {
   width: 85%;
   margin: 70px auto;
   font-family: "Montserrat", sans-serif;
 }
 
-.admin-details .card {
+.admin-details .admin-card {
   padding: 50px;
   width: 50%;
   margin: auto;
@@ -111,16 +111,62 @@ Page not found .page_404 {
 hr {
   border-color: black;
 }
-.card table,
-.card th,
-.card td {
+.admin-cardtable,
+.admin-card th,
+.admin-card td {
   border: 1px solid white;
   border-collapse: collapse;
 }
-.card td {
+.admin-card td {
   border-bottom: 1px solid rgb(212, 208, 208);
 }
-.card table {
+.admin-card table {
   border-collapse: separate;
   border-spacing: 0 15px;
+}
+/* manage category css */
+.manage-category h5 {
+  text-align: start;
+  margin: 40px 0px;
+}
+.create-category form {
+  width: 50%;
+  row-gap: 10px;
+}
+.create-category button {
+  width: 25%;
+}
+.products-card {
+  font-size: 0.6rem;
+}
+
+@media (max-width: 768px) {
+  .create-category form {
+    width: 100%;
+  }
+  .create-category button {
+    width: 50%;
+  }
+  .admin-dashboard {
+    width: 98%;
+    margin: 70px auto;
+    font-family: "Montserrat", sans-serif;
+  }
+  .admin-dashboard > div {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  .admin-dashboard h3 {
+    margin-top: 1rem;
+  }
+  .products-desc {
+    display: none;
+  }
+  .admin-details .admin-card {
+    padding: 0px;
+    width: 100%;
+    margin: 0;
+    box-sizing: content-box;
+    font-size: 0.7rem;
+  }
 }

@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
+import ProductDetails from "./pages/ProductDetails";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Faqs from "./pages/Faqs";
@@ -27,10 +28,17 @@ import EditContacts from "./pages/Admin/EditContacts";
 import EditSizeGuide from "./pages/Admin/EditSizeGuide";
 import Wallet from "./pages/User/Wallet";
 import Security from "./pages/User/Security";
+import UpdateProducts from "./pages/Admin/UpdateProducts";
+import Products from "./pages/Products";
+import Search from "./pages/search";
+import Cart from "./pages/Cart";
 function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/cart" element={<Cart />} />
+      <Route path="/search" element={<Search />} />
+
       <Route path="/dashboard" element={<PrivateRoute />}>
         <Route path="user" element={<Dashboard />} />
         <Route path="user/wallet" element={<Wallet />} />
@@ -40,6 +48,7 @@ function App() {
       <Route path="/dashboard" element={<AdminRoute />}>
         <Route path="admin" element={<AdminDashboard />} />
         <Route path="admin/create-category" element={<CreateCategory />} />
+        <Route path="admin/product/:slug" element={<UpdateProducts />} />
         <Route path="admin/create-product" element={<CreateProduct />} />
         <Route path="admin/products" element={<AdminProducts />} />
         <Route path="admin/orders" element={<AdminOrders />} />
@@ -49,7 +58,9 @@ function App() {
         <Route path="admin/efaqs" element={<EditFAQs />} />
       </Route>
       <Route path="/about" element={<About />} />
+      <Route path="/product/:slug" element={<ProductDetails />} />
       <Route path="/contactus" element={<Contact />} />
+      <Route path="/products" element={<Products />} />
       <Route path="/faqs" element={<Faqs />} />
       <Route path="/globalfootprints" element={<GlobalFoots />} />
       <Route path="/SizeGuide" element={<SizeGuide />} />

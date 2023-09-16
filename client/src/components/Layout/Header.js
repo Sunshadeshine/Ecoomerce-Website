@@ -4,8 +4,11 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 import { useAuth } from "../../context/auth";
 import Dropdown from "react-bootstrap/Dropdown";
+import { useSearch } from "../../context/search.js";
+import axios from "axios";
 
 const Header = () => {
+  const [values, setValues] = useSearch();
   const navigate = useNavigate();
   const [auth, setAuth] = useAuth();
   const handleLogout = () => {
@@ -20,7 +23,18 @@ const Header = () => {
       toast.success("User Logout Sucessfully !");
     }, 1);
   };
-
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const { data } = await axios.get(
+        `${process.env.REACT_APP_API}/api/v1/product/search/${values.keyword}`
+      );
+      setValues({ ...values, results: data });
+      navigate("/search");
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const [showDropdown, setShowDropdown] = useState(false);
 
   return (
@@ -30,8 +44,17 @@ const Header = () => {
           <h1 className="company_name">BathMats Overseas</h1>
 
           <div className="search_container">
-            <form className="search_form" action="">
-              <input type="text" placeholder="Search Product" name="search" />
+            <form className="search_form" onSubmit={handleSubmit}>
+              <input
+                type="search"
+                placeholder="Search Product"
+                name="search"
+                aria-label="search"
+                value={values.keyword}
+                onChange={(e) =>
+                  setValues({ ...values, keyword: e.target.value })
+                }
+              />
               <button type="submit">
                 <span class="material-symbols-outlined"> search</span>
               </button>
@@ -134,7 +157,7 @@ const Header = () => {
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/" className="nav-link" href="">
+            <NavLink to="/products" className="nav-link">
               Our Products
             </NavLink>
           </li>
