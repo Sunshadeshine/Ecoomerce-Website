@@ -4,9 +4,11 @@ import authRoutes from "./auth.js";
 import categoryRoute from "./category.js";
 import productRoute from "./product.js";
 import path from "path";
-const router = express.Router();
-console.log("router loaded");
 
+console.log("router loaded");
+import {fileURLToPath} from 'url';
+
+const router = express.Router();
 router.use("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
