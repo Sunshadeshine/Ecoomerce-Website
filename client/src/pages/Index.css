@@ -1,0 +1,172 @@
+Page not found .page_404 {
+  padding: 40px 0;
+  background: #fff;
+  font-family: "Arvo", serif;
+}
+
+.page_404 img {
+  width: 100%;
+}
+
+.four_zero_four_bg {
+  background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+  height: 400px;
+  background-position: center;
+}
+
+.four_zero_four_bg h1 {
+  font-size: 80px;
+}
+
+.four_zero_four_bg h3 {
+  font-size: 80px;
+}
+.frgt-pss {
+  margin: auto;
+}
+.link_404 {
+  color: #fff !important;
+  padding: 10px 20px;
+  background: #39ac31;
+  margin: 20px 0;
+  display: inline-block;
+}
+.contant_box_404 {
+  margin-top: -50px;
+}
+
+.main_login_reg {
+  display: flex;
+  flex-direction: row;
+  /* row-gap: 20px; */
+  justify-content: space-between;
+  width: 85%;
+  margin: 100px auto;
+}
+.signin_but {
+  width: 100%;
+  background-color: aliceblue;
+  margin: 20px 0px;
+  height: 40px;
+  border: 0.5px solid rgb(190, 187, 187);
+  font-weight: 600;
+}
+.signin_but:hover {
+  color: black;
+}
+.common_form form {
+  text-align: left;
+}
+.common_form h3 {
+  font-size: 2.4rem;
+}
+.common_form {
+  font-family: "Montserrat", sans-serif;
+  width: 30%;
+}
+
+.common_form .form-group {
+  margin: 10px 0px;
+}
+.form-group label {
+  font-size: 0.8rem;
+}
+
+/* social login */
+.socials {
+  margin-top: 20px;
+  column-gap: 10px;
+  justify-content: center;
+}
+.social-label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+}
+
+.zmdi-facebook {
+  background: #3b5998;
+}
+
+.zmdi-twitter {
+  background: #1da0f2;
+}
+
+.zmdi-google {
+  background: #e72734;
+}
+/* admin dashboard */
+.admin-dashboard {
+  width: 85%;
+  margin: 70px auto;
+  font-family: "Montserrat", sans-serif;
+}
+
+.admin-details .admin-card {
+  padding: 50px;
+  width: 50%;
+  margin: auto;
+  box-sizing: content-box;
+  font-size: 1.3rem;
+}
+hr {
+  border-color: black;
+}
+.admin-cardtable,
+.admin-card th,
+.admin-card td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+.admin-card td {
+  border-bottom: 1px solid rgb(212, 208, 208);
+}
+.admin-card table {
+  border-collapse: separate;
+  border-spacing: 0 15px;
+}
+/* manage category css */
+.manage-category h5 {
+  text-align: start;
+  margin: 40px 0px;
+}
+.create-category form {
+  width: 50%;
+  row-gap: 10px;
+}
+.create-category button {
+  width: 25%;
+}
+.products-card {
+  font-size: 0.6rem;
+}
+
+@media (max-width: 768px) {
+  .create-category form {
+    width: 100%;
+  }
+  .create-category button {
+    width: 50%;
+  }
+  .admin-dashboard {
+    width: 98%;
+    margin: 70px auto;
+    font-family: "Montserrat", sans-serif;
+  }
+  .admin-dashboard > div {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  .admin-dashboard h3 {
+    margin-top: 1rem;
+  }
+  .products-desc {
+    display: none;
+  }
+  .admin-details .admin-card {
+    padding: 0px;
+    width: 100%;
+    margin: 0;
+    box-sizing: content-box;
+    font-size: 0.7rem;
+  }
+}
