@@ -12,7 +12,7 @@ console.log("router loaded");
 
 const router = express.Router();
 router.use("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+  res.sendFile(path.join(__dirname, "../client/public/index.html"));
 });
 
 router.use("/api/v1/auth", authRoutes);
